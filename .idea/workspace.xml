@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="542e8dc0-fb4c-4248-a138-913b19583fe2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/code/merging.py" beforeDir="false" afterPath="$PROJECT_DIR$/code/merging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/code/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/code/sample.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +13,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/New_folder$sourceCode.coverage" NAME="sourceCode Coverage Results" MODIFIED="1634924212848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
     <SUITE FILE_PATH="coverage/source_code$GUI_Code.coverage" NAME="GUI_Code Coverage Results" MODIFIED="1634925385101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
-    <SUITE FILE_PATH="coverage/source_code$merging.coverage" NAME="merging Coverage Results" MODIFIED="1634934699749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/source_code$merging.coverage" NAME="merging Coverage Results" MODIFIED="1634935347864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -34,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/code/GUI_Code.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
             </state>
           </provider>
         </entry>
@@ -42,7 +41,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/merging.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
+            <state relative-caret-position="-2352">
               <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
             </state>
           </provider>
@@ -225,19 +224,19 @@
       <option name="presentableId" value="Default" />
       <updated>1634919053291</updated>
       <workItem from="1634919056206" duration="5148000" />
-      <workItem from="1634924790572" duration="9840000" />
+      <workItem from="1634924790572" duration="10789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14988000" />
+    <option name="totallyTimeSpent" value="15937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25718608" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16263238" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="1" />
@@ -266,7 +265,7 @@
     <entry file="file://$PROJECT_DIR$/code/GUI_Code.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
     </entry>
@@ -299,7 +298,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/code/merging.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
+        <state relative-caret-position="-2352">
           <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
         </state>
       </provider>
