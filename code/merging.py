@@ -1,7 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
+from PyQt5.QtWidgets import QMainWindow, QFileDialog, QMessageBox
 
 
 class MainWindow(QMainWindow):
@@ -17,8 +17,16 @@ class MainWindow(QMainWindow):
 setting = False
 whiteCam = False
 blackCam = False
-whiteNumber = 7000
-blackNumber = 20000
+if os.path.isfile('sample.txt'):
+    file = open("sample.txt")
+    a = file.read().split(' ')
+    whiteNumber = int(a[0])
+    blackNumber = int(a[1])
+else:
+    whiteNumber = 7000
+    blackNumber = 20000
+    file = open("sample.txt", 'w')
+    file.write(str(whiteNumber) + ' ' + str(blackNumber))
 
 
 class Ui_Dialog(object):
@@ -107,7 +115,7 @@ class Ui_Dialog(object):
         print('Ahole')
         blackCam = True
         whiteCam = False
-        g=dest
+        g = dest
         old_name = g
         print(g)
         # my code
@@ -174,11 +182,12 @@ class Ui_Dialog(object):
         x = msg.exec_()  # this will show our messagebox
         whiteCam = False
         blackCam = False
+        sys.exit()
 
     def whiteCam1(self):
         whiteCam = True
         blackCam = False
-        g=dest
+        g = dest
         old_name = g
         # my code
         g = str(g).split('/')
@@ -244,27 +253,35 @@ class Ui_Dialog(object):
         x = msg.exec_()  # this will show our messagebox
         whiteCam = False
         blackCam = False
+        sys.exit()
 
     def whiteCamNumber(self):
-        setting = True
         whiteNumber = self.whitetext.toPlainText()
+        file = open("sample.txt", 'w')
+        file.write(str(whiteNumber) + ' ' + str(blackNumber))
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("submitted successfully:)")
+        x = msg.exec_()  # this will show our messagebox
+        sys.exit()
 
     def blackCamNumber(self):
-        setting = True
         blackNumber = self.blacktext.toPlainText()
+        file = open("sample.txt", 'w')
+        file.write(str(whiteNumber) + ' ' + str(blackNumber))
+        msg = QMessageBox()
+        msg.setWindowTitle("Success message")
+        msg.setText("submitted successfully:)")
+        x = msg.exec_()  # this will show our messagebox
+        sys.exit()
 
 
 app = QtWidgets.QApplication(sys.argv)
 window = MainWindow()
-dest=str(g)
+dest = str(g)
 
 Dialog = QtWidgets.QDialog()
 ui = Ui_Dialog()
 ui.setupUi(Dialog)
 Dialog.show()
-
-
-#  my code
-
-
 sys.exit(app.exec_())
