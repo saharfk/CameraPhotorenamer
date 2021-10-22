@@ -4,7 +4,6 @@ import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 
-
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -105,9 +104,10 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog", "Black camera"))
 
     def blackCam1(self):
+        print('Ahole')
         blackCam = True
         whiteCam = False
-        window = MainWindow()
+        g=dest
         old_name = g
         print(g)
         # my code
@@ -178,7 +178,7 @@ class Ui_Dialog(object):
     def whiteCam1(self):
         whiteCam = True
         blackCam = False
-        window = MainWindow()
+        g=dest
         old_name = g
         # my code
         g = str(g).split('/')
@@ -255,12 +255,15 @@ class Ui_Dialog(object):
 
 
 app = QtWidgets.QApplication(sys.argv)
+window = MainWindow()
+dest=str(g)
+
 Dialog = QtWidgets.QDialog()
 ui = Ui_Dialog()
 ui.setupUi(Dialog)
 Dialog.show()
 
-# if not setting:
+
 #  my code
 
 
