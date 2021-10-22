@@ -1,6 +1,6 @@
 import os
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
+from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog, QMessageBox
 
 
 # you can copy and run this code
@@ -41,11 +41,13 @@ while exist:
         new_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + blackNumber + counter) + '.' + numberAndFormat[1]
 
     if os.path.isfile(new_name):
-        print(new_name, " already exists")
-    #     TODO
+        msg = QMessageBox()
+        msg.setWindowTitle("fail message")
+        msg.setText(new_name, " already exists please check the files and try again :(")
+        x = msg.exec_()  # this will show our messagebox
+        break
     else:
         # Rename the file
-        print('ok')
         os.rename(old_name, new_name)
 
     # ----------
@@ -76,5 +78,7 @@ while exist:
                     exist = False
     counter += 1
 
-print('DONE!')
-# TODO
+msg = QMessageBox()
+msg.setWindowTitle("Success message")
+msg.setText("All Files are renamed :)")
+x = msg.exec_()  # this will show our messagebox
