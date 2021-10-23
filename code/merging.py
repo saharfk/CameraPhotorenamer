@@ -97,8 +97,8 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         self.blackCam.clicked.connect(self.blackCam1)
         self.WhiteCam.clicked.connect(self.whiteCam1)
-        self.whitesubmit.clicked.connect(self.whiteCamNumber)
-        self.blacksubmit.clicked.connect(self.blackCamNumber)
+        self.whitesubmit.clicked.connect(self.CamNumber)
+        self.blacksubmit.clicked.connect(self.CamNumber)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -112,7 +112,6 @@ class Ui_Dialog(object):
         self.label_2.setText(_translate("Dialog", "Black camera"))
 
     def blackCam1(self):
-        print('Ahole')
         blackCam = True
         whiteCam = False
         g = dest
@@ -126,7 +125,7 @@ class Ui_Dialog(object):
         for i in range(len(g) - 1):
             stickyG += g[i] + '/'
 
-        counter = 1
+        counter = 0
         while exist:
             new_name = ''
 
@@ -149,32 +148,32 @@ class Ui_Dialog(object):
                 os.rename(old_name, new_name)
 
             # ----------
-            old_name = ''
-            old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.JPG'
+            counter += 1
+
+            number = str(int(numberAndFormat[0]) + counter)
+            if len(number) < 4:
+                number = number.zfill(4)
+            old_name = stickyG + 'SAM_' + number + '.JPG'
             if os.path.isfile(old_name):
                 exist = True
                 numberAndFormat[1] = 'JPG'
             else:
-                old_name = ''
-                old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.MP4'
+                old_name = stickyG + 'SAM_' + number + '.MP4'
                 if os.path.isfile(old_name):
                     exist = True
                     numberAndFormat[1] = 'MP4'
                 else:
-                    old_name = ''
-                    old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.jpg'
+                    old_name = stickyG + 'SAM_' + number + '.jpg'
                     if os.path.isfile(old_name):
                         exist = True
                         numberAndFormat[1] = 'jpg'
                     else:
-                        old_name = ''
-                        old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.mp4'
+                        old_name = stickyG + 'SAM_' + number + '.mp4'
                         if os.path.isfile(old_name):
                             exist = True
                             numberAndFormat[1] = 'mp4'
                         else:
                             exist = False
-            counter += 1
 
         msg = QMessageBox()
         msg.setWindowTitle("Success message")
@@ -197,7 +196,7 @@ class Ui_Dialog(object):
         for i in range(len(g) - 1):
             stickyG += g[i] + '/'
 
-        counter = 1
+        counter = 0
         while exist:
             new_name = ''
 
@@ -220,32 +219,33 @@ class Ui_Dialog(object):
                 os.rename(old_name, new_name)
 
             # ----------
-            old_name = ''
-            old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.JPG'
+            counter += 1
+
+            number = str(int(numberAndFormat[0]) + counter)
+            if len(number) < 4:
+                number = number.zfill(4)
+
+            old_name = stickyG + 'SAM_' + number + '.JPG'
             if os.path.isfile(old_name):
                 exist = True
                 numberAndFormat[1] = 'JPG'
             else:
-                old_name = ''
-                old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.MP4'
+                old_name = stickyG + 'SAM_' + number + '.MP4'
                 if os.path.isfile(old_name):
                     exist = True
                     numberAndFormat[1] = 'MP4'
                 else:
-                    old_name = ''
-                    old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.jpg'
+                    old_name = stickyG + 'SAM_' + number + '.jpg'
                     if os.path.isfile(old_name):
                         exist = True
                         numberAndFormat[1] = 'jpg'
                     else:
-                        old_name = ''
-                        old_name = stickyG + 'SAM_' + str(int(numberAndFormat[0]) + counter) + '.mp4'
+                        old_name = stickyG + 'SAM_' + number + '.mp4'
                         if os.path.isfile(old_name):
                             exist = True
                             numberAndFormat[1] = 'mp4'
                         else:
                             exist = False
-            counter += 1
 
         msg = QMessageBox()
         msg.setWindowTitle("Success message")
@@ -255,18 +255,8 @@ class Ui_Dialog(object):
         blackCam = False
         sys.exit()
 
-    def whiteCamNumber(self):
+    def CamNumber(self):
         whiteNumber = self.whitetext.toPlainText()
-        file = open("sample.txt", 'w')
-        file.write(str(whiteNumber) + ' ' + str(blackNumber))
-        msg = QMessageBox()
-        msg.setWindowTitle("Success message")
-        msg.setText("submitted successfully:)")
-        x = msg.exec_()  # this will show our messagebox
-        sys.exit()
-
-    def blackCamNumber(self):
-        blackNumber = self.blacktext.toPlainText()
         file = open("sample.txt", 'w')
         file.write(str(whiteNumber) + ' ' + str(blackNumber))
         msg = QMessageBox()
